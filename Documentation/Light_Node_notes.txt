@@ -1,0 +1,28 @@
+Light Node Concept : 
+
+Uses Atmega328P as the core MCU. Uses the 3.3V variant, and uses an 8mhz clock. Design is based off of the Adafruit Pro Trinket 3V/8Mhz product
+
+USB micro port on board for programming and power
+
+FTDI pins on board for inital bootloader loading and override in case of usb issues. 
+
+3-axis accelerometer on board
+
+One Red LED shows when power is present. Color optional at placement
+Other LED can be user controlled on D13. Color optional at placement
+
+MCP738731 LiPO charger using adafruit design - https://www.digikey.com/product-detail/en/microchip-technology/MCP73831T-2ACI-OT/MCP73831T-2ACI-OTCT-ND/1979802 
+
+Simple 2-pin JST for connection to LiPo
+
+Simple 3-pin JST connector for connection to LED strips
+
+single reset button - Optional placement
+
+voltage regulator to step down from 5V to 3.3V for accel and uC
+
+basic buffer for shifting the level up for the LEDs. 74LVC1G17SE-7
+
+Powering the Board : 
+Needs to be run from a reliable 5V source, IE a usb pack with a micro cable
+

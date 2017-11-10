@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="6.3">
+<eagle version="7.5.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -3510,7 +3510,7 @@ Small SMD resonator. This is the itty bitty 10/20MHz resonators with built in ca
 <instance part="R5" gate="G$1" x="121.92" y="109.22" rot="MR0"/>
 <instance part="B1" gate="G$1" x="134.62" y="109.22" rot="MR180"/>
 <instance part="GND4" gate="1" x="139.7" y="106.68"/>
-<instance part="CN1" gate="G$1" x="121.92" y="134.62"/>
+<instance part="CN1" gate="G$1" x="119.38" y="134.62"/>
 <instance part="U$2" gate="G$1" x="134.62" y="142.24"/>
 <instance part="IC1" gate="G$1" x="63.5" y="142.24"/>
 <instance part="GND7" gate="1" x="33.02" y="162.56" rot="R270"/>
@@ -3539,7 +3539,7 @@ Small SMD resonator. This is the itty bitty 10/20MHz resonators with built in ca
 <nets>
 <net name="GND" class="1">
 <segment>
-<wire x1="132.08" y1="129.54" x2="139.7" y2="129.54" width="0.1524" layer="91"/>
+<wire x1="129.54" y1="129.54" x2="139.7" y2="129.54" width="0.1524" layer="91"/>
 <wire x1="139.7" y1="129.54" x2="139.7" y2="127" width="0.1524" layer="91"/>
 <pinref part="GND1" gate="1" pin="GND"/>
 <pinref part="CN1" gate="G$1" pin="GND"/>
@@ -3661,7 +3661,7 @@ Small SMD resonator. This is the itty bitty 10/20MHz resonators with built in ca
 </net>
 <net name="D+" class="0">
 <segment>
-<wire x1="132.08" y1="137.16" x2="137.16" y2="137.16" width="0.1524" layer="91"/>
+<wire x1="129.54" y1="137.16" x2="137.16" y2="137.16" width="0.1524" layer="91"/>
 <wire x1="137.16" y1="137.16" x2="142.24" y2="132.08" width="0.1524" layer="91"/>
 <wire x1="142.24" y1="132.08" x2="149.86" y2="132.08" width="0.1524" layer="91"/>
 <pinref part="R2" gate="G$1" pin="1"/>
@@ -3670,7 +3670,7 @@ Small SMD resonator. This is the itty bitty 10/20MHz resonators with built in ca
 </net>
 <net name="D-" class="0">
 <segment>
-<wire x1="132.08" y1="134.62" x2="137.16" y2="134.62" width="0.1524" layer="91"/>
+<wire x1="129.54" y1="134.62" x2="137.16" y2="134.62" width="0.1524" layer="91"/>
 <wire x1="137.16" y1="134.62" x2="139.7" y2="137.16" width="0.1524" layer="91"/>
 <pinref part="R1" gate="G$1" pin="1"/>
 <wire x1="139.7" y1="137.16" x2="149.86" y2="137.16" width="0.1524" layer="91"/>
@@ -3690,7 +3690,7 @@ Small SMD resonator. This is the itty bitty 10/20MHz resonators with built in ca
 <segment>
 <pinref part="CN1" gate="G$1" pin="VBUS"/>
 <pinref part="U$2" gate="G$1" pin="VBUS"/>
-<wire x1="134.62" y1="139.7" x2="132.08" y2="139.7" width="0.1524" layer="91"/>
+<wire x1="134.62" y1="139.7" x2="129.54" y2="139.7" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <wire x1="167.64" y1="187.96" x2="154.94" y2="187.96" width="0.1524" layer="91"/>
