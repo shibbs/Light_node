@@ -107,6 +107,8 @@
 <layer number="153" name="FabDoc1" color="6" fill="1" visible="no" active="no"/>
 <layer number="154" name="FabDoc2" color="2" fill="1" visible="no" active="no"/>
 <layer number="155" name="FabDoc3" color="7" fill="15" visible="no" active="no"/>
+<layer number="160" name="GErr" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="161" name="GErrText" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="199" name="Contour" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="200" name="200bmp" color="1" fill="10" visible="no" active="no"/>
 <layer number="201" name="201bmp" color="2" fill="1" visible="no" active="no"/>
@@ -133,6 +135,10 @@
 <layer number="222" name="222bmp" color="23" fill="1" visible="no" active="no"/>
 <layer number="223" name="223bmp" color="24" fill="1" visible="no" active="no"/>
 <layer number="224" name="224bmp" color="25" fill="1" visible="no" active="no"/>
+<layer number="225" name="225bmp" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="226" name="226bmp" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="227" name="227bmp" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="228" name="228bmp" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="231" name="Eagle3D_PG1" color="7" fill="1" visible="no" active="no"/>
 <layer number="232" name="Eagle3D_PG2" color="7" fill="1" visible="no" active="no"/>
 <layer number="233" name="Eagle3D_PG3" color="7" fill="1" visible="no" active="no"/>
@@ -4121,57 +4127,58 @@ In this library the device names are the same as the pin names of the symbols, t
 </deviceset>
 </devicesets>
 </library>
-<library name="0_Shibbs1">
+<library name="0_AlpineLabs">
 <packages>
-<package name="LED_LX6">
-<wire x1="-1.7" y1="-1.8" x2="-1.7" y2="1.7" width="0.1" layer="21"/>
-<wire x1="-1.7" y1="-1.8" x2="1.7" y2="-1.8" width="0.1" layer="21"/>
-<wire x1="1.7" y1="-1.8" x2="1.7" y2="1.7" width="0.1" layer="21"/>
-<wire x1="1.7" y1="1.7" x2="-1.7" y2="1.7" width="0.1" layer="21"/>
-<smd name="P2" x="-1.7" y="0" dx="1.6" dy="0.7" layer="1"/>
-<smd name="P5" x="1.7" y="0" dx="1.6" dy="0.7" layer="1"/>
-<smd name="P1" x="-1.7" y="1.1" dx="1.6" dy="0.7" layer="1"/>
-<smd name="P4" x="1.7" y="-1.1" dx="1.6" dy="0.7" layer="1"/>
-<smd name="P6" x="1.7" y="1.1" dx="1.6" dy="0.7" layer="1"/>
-<smd name="P3" x="-1.7" y="-1.1" dx="1.6" dy="0.7" layer="1"/>
-<circle x="-2.1" y="2.3" radius="0.316225" width="0.1" layer="21"/>
-<text x="-2.3" y="-2.7" size="0.6096" layer="25">&gt;NAME</text>
-<text x="-4" y="-4" size="0.6096" layer="51">CLX6F-FKC-CNP1ST1E1BB7D3D3</text>
+<package name="SOT23">
+<description>&lt;b&gt;SOT-23&lt;/b&gt;</description>
+<wire x1="1.4224" y1="0.6604" x2="1.4224" y2="-0.6604" width="0.1524" layer="51"/>
+<wire x1="1.4224" y1="-0.6604" x2="-1.4224" y2="-0.6604" width="0.1524" layer="51"/>
+<wire x1="-1.4224" y1="-0.6604" x2="-1.4224" y2="0.6604" width="0.1524" layer="51"/>
+<wire x1="-1.4224" y1="0.6604" x2="1.4224" y2="0.6604" width="0.1524" layer="51"/>
+<smd name="3" x="0" y="1.1" dx="1" dy="1.4" layer="1"/>
+<smd name="2" x="0.95" y="-1.1" dx="1" dy="1.4" layer="1"/>
+<smd name="1" x="-0.95" y="-1.1" dx="1" dy="1.4" layer="1"/>
+<text x="-1.905" y="1.905" size="1.27" layer="25">&gt;NAME</text>
+<text x="-1.905" y="-3.175" size="1.27" layer="27">&gt;VALUE</text>
+<rectangle x1="-0.2286" y1="0.7112" x2="0.2286" y2="1.2954" layer="51"/>
+<rectangle x1="0.7112" y1="-1.2954" x2="1.1684" y2="-0.7112" layer="51"/>
+<rectangle x1="-1.1684" y1="-1.2954" x2="-0.7112" y2="-0.7112" layer="51"/>
 </package>
 </packages>
 <symbols>
-<symbol name="LED">
-<pin name="+" x="0" y="-2.54" visible="off" length="middle" rot="R90"/>
-<pin name="-" x="0" y="2.54" visible="off" length="short" rot="R270"/>
-<wire x1="1.778" y1="-1.016" x2="0" y2="1.016" width="0.254" layer="94"/>
-<wire x1="0" y1="1.016" x2="-2.032" y2="-1.016" width="0.254" layer="94"/>
-<wire x1="-2.032" y1="-1.016" x2="1.778" y2="-1.016" width="0.254" layer="94"/>
-<wire x1="-1.524" y1="1.524" x2="1.27" y2="1.524" width="0.254" layer="94"/>
-<wire x1="2.54" y1="0.254" x2="2.54" y2="0.508" width="0.254" layer="94"/>
-<wire x1="2.54" y1="0.508" x2="3.302" y2="1.27" width="0.254" layer="94"/>
-<wire x1="3.302" y1="1.27" x2="3.556" y2="1.27" width="0.254" layer="94"/>
-<wire x1="3.556" y1="1.27" x2="4.064" y2="0.762" width="0.254" layer="94"/>
-<wire x1="4.064" y1="0.762" x2="5.08" y2="1.778" width="0.254" layer="94"/>
-<text x="-2.54" y="-5.08" size="1.778" layer="95" rot="R90">&gt;NAME</text>
-<text x="-5.08" y="-5.08" size="1.778" layer="96" rot="R90">&gt;VALUE</text>
+<symbol name="COMMON_ANODE_DIODE">
+<wire x1="-7.62" y1="2.54" x2="-5.08" y2="2.54" width="0.254" layer="94"/>
+<wire x1="-2.54" y1="2.54" x2="-5.08" y2="2.54" width="0.254" layer="94"/>
+<wire x1="-5.08" y1="2.54" x2="-7.62" y2="0" width="0.254" layer="94"/>
+<wire x1="-7.62" y1="0" x2="-5.08" y2="0" width="0.254" layer="94"/>
+<wire x1="-5.08" y1="0" x2="-2.54" y2="0" width="0.254" layer="94"/>
+<wire x1="-2.54" y1="0" x2="-5.08" y2="2.54" width="0.254" layer="94"/>
+<pin name="CATHODE" x="-5.08" y="7.62" length="middle" rot="R270"/>
+<wire x1="2.54" y1="2.54" x2="5.08" y2="2.54" width="0.254" layer="94"/>
+<wire x1="7.62" y1="2.54" x2="5.08" y2="2.54" width="0.254" layer="94"/>
+<wire x1="5.08" y1="2.54" x2="2.54" y2="0" width="0.254" layer="94"/>
+<wire x1="2.54" y1="0" x2="5.08" y2="0" width="0.254" layer="94"/>
+<wire x1="5.08" y1="0" x2="7.62" y2="0" width="0.254" layer="94"/>
+<wire x1="7.62" y1="0" x2="5.08" y2="2.54" width="0.254" layer="94"/>
+<pin name="CATHODE1" x="5.08" y="7.62" length="middle" rot="R270"/>
+<pin name="ANODE1" x="0" y="-7.62" length="middle" rot="R90"/>
+<wire x1="-5.08" y1="0" x2="-5.08" y2="-2.54" width="0.254" layer="94"/>
+<wire x1="5.08" y1="0" x2="5.08" y2="-2.54" width="0.254" layer="94"/>
+<wire x1="0" y1="-2.54" x2="5.08" y2="-2.54" width="0.254" layer="94"/>
+<wire x1="0" y1="-2.54" x2="-5.08" y2="-2.54" width="0.254" layer="94"/>
 </symbol>
 </symbols>
 <devicesets>
-<deviceset name="RGB_LED">
+<deviceset name="COMMON_ANODE_DIODE">
 <gates>
-<gate name="B_LED" symbol="LED" x="-5.08" y="2.54"/>
-<gate name="G_LED" symbol="LED" x="2.54" y="2.54"/>
-<gate name="R_LED" symbol="LED" x="10.16" y="2.54"/>
+<gate name="G$1" symbol="COMMON_ANODE_DIODE" x="0" y="0"/>
 </gates>
 <devices>
-<device name="" package="LED_LX6">
+<device name="" package="SOT23">
 <connects>
-<connect gate="B_LED" pin="+" pad="P6"/>
-<connect gate="B_LED" pin="-" pad="P1"/>
-<connect gate="G_LED" pin="+" pad="P5"/>
-<connect gate="G_LED" pin="-" pad="P2"/>
-<connect gate="R_LED" pin="+" pad="P4"/>
-<connect gate="R_LED" pin="-" pad="P3"/>
+<connect gate="G$1" pin="ANODE1" pad="3"/>
+<connect gate="G$1" pin="CATHODE" pad="2"/>
+<connect gate="G$1" pin="CATHODE1" pad="1"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -4230,7 +4237,6 @@ In this library the device names are the same as the pin names of the symbols, t
 <part name="+3V2" library="supply1" deviceset="+3V3" device=""/>
 <part name="C3" library="microbuilder" deviceset="CAP_CERAMIC" device="0805-NOOUTLINE" value="0.1uF"/>
 <part name="GND13" library="supply1" deviceset="GND" device=""/>
-<part name="JP3" library="SparkFun" deviceset="M03" device="JST-PTH"/>
 <part name="GND18" library="supply1" deviceset="GND" device=""/>
 <part name="U1" library="microbuilder" deviceset="MCP73831/2" device="" value="MCP73831T-2ACI/OT"/>
 <part name="CH_LED" library="microbuilder" deviceset="LED" device="0805_NOOUTLINE" value="GREEN"/>
@@ -4247,7 +4253,6 @@ In this library the device names are the same as the pin names of the symbols, t
 <part name="JP5" library="microbuilder" deviceset="HEADER-1X2" device="ROUND"/>
 <part name="SUPPLY7" library="supply2" deviceset="+5V" device=""/>
 <part name="U$14" library="microbuilder" deviceset="VBAT" device=""/>
-<part name="U$15" library="microbuilder" deviceset="VBAT" device=""/>
 <part name="SUPPLY1" library="supply2" deviceset="+5V" device=""/>
 <part name="SUPPLY2" library="supply2" deviceset="+5V" device=""/>
 <part name="R7" library="SparkFun" deviceset="TRIMPOT" device=""/>
@@ -4264,20 +4269,19 @@ In this library the device names are the same as the pin names of the symbols, t
 <part name="U$19" library="microbuilder" deviceset="3.3V" device=""/>
 <part name="R16" library="microbuilder" deviceset="RESISTOR" device="0805_NOOUTLINE" value="10K"/>
 <part name="U$22" library="microbuilder" deviceset="GND" device=""/>
-<part name="LED1" library="0_Shibbs1" deviceset="RGB_LED" device=""/>
-<part name="LED2" library="0_Shibbs1" deviceset="RGB_LED" device=""/>
-<part name="R9" library="microbuilder" deviceset="RESISTOR" device="_0603_NOOUT" value="470 (0603)"/>
-<part name="R13" library="microbuilder" deviceset="RESISTOR" device="_0603_NOOUT" value="470 (0603)"/>
-<part name="R14" library="microbuilder" deviceset="RESISTOR" device="_0603_NOOUT" value="470 (0603)"/>
-<part name="R15" library="microbuilder" deviceset="RESISTOR" device="_0603_NOOUT" value="470 (0603)"/>
-<part name="R17" library="microbuilder" deviceset="RESISTOR" device="_0603_NOOUT" value="470 (0603)"/>
-<part name="R18" library="microbuilder" deviceset="RESISTOR" device="_0603_NOOUT" value="470 (0603)"/>
-<part name="U$23" library="microbuilder" deviceset="VBAT" device=""/>
-<part name="U$24" library="microbuilder" deviceset="VBAT" device=""/>
 <part name="JP2" library="adafruit" deviceset="PINHD-1X12" device="-CB"/>
 <part name="SUPPLY3" library="supply2" deviceset="+5V" device=""/>
 <part name="LED3" library="microbuilder" deviceset="WS2812B5050" device=""/>
 <part name="LED4" library="microbuilder" deviceset="WS2812B5050" device=""/>
+<part name="R10" library="microbuilder" deviceset="RESISTOR" device="_0603_NOOUT" value="10K"/>
+<part name="+3V7" library="supply1" deviceset="+3V3" device=""/>
+<part name="U$6" library="microbuilder" deviceset="GND" device=""/>
+<part name="SUPPLY4" library="supply2" deviceset="+5V" device=""/>
+<part name="U$7" library="microbuilder" deviceset="VBAT" device=""/>
+<part name="R9" library="microbuilder" deviceset="RESISTOR" device="_0603_NOOUT" value="100"/>
+<part name="JP1" library="SparkFun" deviceset="M03" device="JST-PTH"/>
+<part name="U$9" library="0_AlpineLabs" deviceset="COMMON_ANODE_DIODE" device=""/>
+<part name="SUPPLY5" library="supply2" deviceset="+5V" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -4290,7 +4294,7 @@ In this library the device names are the same as the pin names of the symbols, t
 <text x="205.74" y="154.94" size="1.778" layer="97">2.0K  = 500mA</text>
 <text x="205.74" y="152.4" size="1.778" layer="97">1.0K  = 1000mA</text>
 <text x="147.32" y="167.64" size="2.54" layer="97">Battery Charger Circuit</text>
-<text x="165.1" y="124.46" size="2.54" layer="97">USB power LED</text>
+<text x="15.24" y="198.12" size="2.54" layer="97">USB power LED</text>
 <text x="210.82" y="203.2" size="2.54" layer="97">USB Power and Data In</text>
 <text x="231.14" y="149.86" size="2.54" layer="97">potentiometer for tuning stuff</text>
 <text x="81.28" y="53.34" size="1.778" layer="97">I2C</text>
@@ -4304,6 +4308,7 @@ In this library the device names are the same as the pin names of the symbols, t
 <text x="91.44" y="33.02" size="1.778" layer="97">Bus Selection</text>
 <text x="17.78" y="236.22" size="2.54" layer="97">For USB-powered Designs : 
 Short JP5 and DNP the lithium battery. If you don't do this things are going to get fucked up</text>
+<text x="314.96" y="154.94" size="2.54" layer="97">BAW56L </text>
 </plain>
 <instances>
 <instance part="R1" gate="G$1" x="251.46" y="182.88"/>
@@ -4344,8 +4349,7 @@ Short JP5 and DNP the lithium battery. If you don't do this things are going to 
 <instance part="+3V2" gate="G$1" x="22.86" y="180.34"/>
 <instance part="C3" gate="G$1" x="45.72" y="180.34" rot="R90"/>
 <instance part="GND13" gate="1" x="40.64" y="119.38"/>
-<instance part="JP3" gate="G$1" x="195.58" y="111.76"/>
-<instance part="GND18" gate="1" x="208.28" y="106.68"/>
+<instance part="GND18" gate="1" x="215.9" y="104.14"/>
 <instance part="U1" gate="G$1" x="170.18" y="142.24"/>
 <instance part="CH_LED" gate="G$1" x="134.62" y="132.08" rot="R180"/>
 <instance part="R11" gate="G$1" x="147.32" y="132.08"/>
@@ -4361,7 +4365,6 @@ Short JP5 and DNP the lithium battery. If you don't do this things are going to 
 <instance part="JP5" gate="G$1" x="170.18" y="162.56" rot="R90"/>
 <instance part="SUPPLY7" gate="+5V" x="124.46" y="147.32"/>
 <instance part="U$14" gate="G$1" x="187.96" y="162.56"/>
-<instance part="U$15" gate="G$1" x="208.28" y="116.84"/>
 <instance part="SUPPLY1" gate="+5V" x="231.14" y="187.96"/>
 <instance part="SUPPLY2" gate="+5V" x="213.36" y="91.44"/>
 <instance part="R7" gate="R?" x="259.08" y="129.54" rot="R90"/>
@@ -4378,24 +4381,19 @@ Short JP5 and DNP the lithium battery. If you don't do this things are going to 
 <instance part="U$19" gate="G$1" x="66.04" y="40.64"/>
 <instance part="R16" gate="G$1" x="68.58" y="22.86" rot="R180"/>
 <instance part="U$22" gate="G$1" x="76.2" y="20.32"/>
-<instance part="LED1" gate="B_LED" x="109.22" y="88.9" rot="R180"/>
-<instance part="LED1" gate="G_LED" x="116.84" y="88.9" rot="R180"/>
-<instance part="LED1" gate="R_LED" x="127" y="88.9" rot="R180"/>
-<instance part="LED2" gate="B_LED" x="144.78" y="88.9" rot="R180"/>
-<instance part="LED2" gate="G_LED" x="152.4" y="88.9" rot="R180"/>
-<instance part="LED2" gate="R_LED" x="160.02" y="88.9" rot="R180"/>
-<instance part="R9" gate="G$1" x="160.02" y="81.28" rot="R90"/>
-<instance part="R13" gate="G$1" x="152.4" y="81.28" rot="R90"/>
-<instance part="R14" gate="G$1" x="144.78" y="81.28" rot="R90"/>
-<instance part="R15" gate="G$1" x="127" y="81.28" rot="R90"/>
-<instance part="R17" gate="G$1" x="116.84" y="81.28" rot="R90"/>
-<instance part="R18" gate="G$1" x="109.22" y="81.28" rot="R90"/>
-<instance part="U$23" gate="G$1" x="152.4" y="96.52"/>
-<instance part="U$24" gate="G$1" x="116.84" y="96.52"/>
 <instance part="JP2" gate="G$1" x="144.78" y="193.04"/>
 <instance part="SUPPLY3" gate="+5V" x="43.18" y="190.5"/>
-<instance part="LED3" gate="G$1" x="63.5" y="-27.94"/>
-<instance part="LED4" gate="G$1" x="88.9" y="-27.94"/>
+<instance part="LED3" gate="G$1" x="139.7" y="73.66"/>
+<instance part="LED4" gate="G$1" x="165.1" y="73.66"/>
+<instance part="R10" gate="G$1" x="332.74" y="147.32" rot="R180"/>
+<instance part="+3V7" gate="G$1" x="304.8" y="149.86"/>
+<instance part="U$6" gate="G$1" x="154.94" y="60.96"/>
+<instance part="SUPPLY4" gate="+5V" x="208.28" y="116.84"/>
+<instance part="U$7" gate="G$1" x="154.94" y="93.98"/>
+<instance part="R9" gate="G$1" x="114.3" y="71.12" rot="R180"/>
+<instance part="JP1" gate="G$1" x="226.06" y="111.76" rot="R180"/>
+<instance part="U$9" gate="G$1" x="320.04" y="142.24" rot="R90"/>
+<instance part="SUPPLY5" gate="+5V" x="345.44" y="149.86"/>
 </instances>
 <busses>
 </busses>
@@ -4471,13 +4469,6 @@ Short JP5 and DNP the lithium battery. If you don't do this things are going to 
 <pinref part="GND13" gate="1" pin="GND"/>
 </segment>
 <segment>
-<pinref part="JP3" gate="G$1" pin="1"/>
-<wire x1="203.2" y1="109.22" x2="208.28" y2="109.22" width="0.1524" layer="91"/>
-<pinref part="GND18" gate="1" pin="GND"/>
-<wire x1="208.28" y1="109.22" x2="210.82" y2="109.22" width="0.1524" layer="91"/>
-<junction x="208.28" y="109.22"/>
-</segment>
-<segment>
 <pinref part="C4" gate="G$1" pin="2"/>
 <pinref part="U$5" gate="G$1" pin="GND"/>
 <wire x1="121.92" y1="134.62" x2="121.92" y2="129.54" width="0.1524" layer="91"/>
@@ -4538,6 +4529,21 @@ Short JP5 and DNP the lithium battery. If you don't do this things are going to 
 <pinref part="U$22" gate="G$1" pin="GND"/>
 <wire x1="73.66" y1="22.86" x2="76.2" y2="22.86" width="0.1524" layer="91"/>
 </segment>
+<segment>
+<pinref part="LED3" gate="G$1" pin="GND"/>
+<wire x1="139.7" y1="63.5" x2="154.94" y2="63.5" width="0.1524" layer="91"/>
+<pinref part="LED4" gate="G$1" pin="GND"/>
+<junction x="165.1" y="63.5"/>
+<pinref part="U$6" gate="G$1" pin="GND"/>
+<wire x1="154.94" y1="63.5" x2="165.1" y2="63.5" width="0.1524" layer="91"/>
+<junction x="154.94" y="63.5"/>
+</segment>
+<segment>
+<pinref part="JP1" gate="G$1" pin="2"/>
+<wire x1="218.44" y1="111.76" x2="215.9" y2="111.76" width="0.1524" layer="91"/>
+<wire x1="215.9" y1="111.76" x2="215.9" y2="106.68" width="0.1524" layer="91"/>
+<pinref part="GND18" gate="1" pin="GND"/>
+</segment>
 </net>
 <net name="+3V3" class="1">
 <segment>
@@ -4579,6 +4585,12 @@ Short JP5 and DNP the lithium battery. If you don't do this things are going to 
 <pinref part="R7" gate="R?" pin="CW"/>
 <pinref part="+3V6" gate="G$1" pin="+3V3"/>
 <wire x1="259.08" y1="139.7" x2="259.08" y2="134.62" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="+3V7" gate="G$1" pin="+3V3"/>
+<pinref part="U$9" gate="G$1" pin="CATHODE1"/>
+<wire x1="312.42" y1="147.32" x2="304.8" y2="147.32" width="0.1524" layer="91"/>
+<junction x="312.42" y="147.32"/>
 </segment>
 </net>
 <net name="D+" class="0">
@@ -4641,29 +4653,15 @@ Short JP5 and DNP the lithium battery. If you don't do this things are going to 
 <junction x="187.96" y="160.02"/>
 </segment>
 <segment>
-<pinref part="JP3" gate="G$1" pin="3"/>
-<wire x1="203.2" y1="114.3" x2="208.28" y2="114.3" width="0.1524" layer="91"/>
-<pinref part="U$15" gate="G$1" pin="VBAT"/>
-<wire x1="208.28" y1="114.3" x2="210.82" y2="114.3" width="0.1524" layer="91"/>
-<junction x="208.28" y="114.3"/>
-</segment>
-<segment>
-<pinref part="LED2" gate="B_LED" pin="+"/>
-<pinref part="LED2" gate="G_LED" pin="+"/>
-<wire x1="144.78" y1="91.44" x2="152.4" y2="91.44" width="0.1524" layer="91"/>
-<pinref part="LED2" gate="R_LED" pin="+"/>
-<wire x1="160.02" y1="91.44" x2="152.4" y2="91.44" width="0.1524" layer="91"/>
-<wire x1="152.4" y1="93.98" x2="152.4" y2="91.44" width="0.1524" layer="91"/>
-<pinref part="U$23" gate="G$1" pin="VBAT"/>
-</segment>
-<segment>
-<pinref part="LED1" gate="R_LED" pin="+"/>
-<pinref part="LED1" gate="G_LED" pin="+"/>
-<wire x1="127" y1="91.44" x2="116.84" y2="91.44" width="0.1524" layer="91"/>
-<pinref part="LED1" gate="B_LED" pin="+"/>
-<wire x1="109.22" y1="91.44" x2="116.84" y2="91.44" width="0.1524" layer="91"/>
-<wire x1="116.84" y1="93.98" x2="116.84" y2="91.44" width="0.1524" layer="91"/>
-<pinref part="U$24" gate="G$1" pin="VBAT"/>
+<pinref part="LED3" gate="G$1" pin="VDD"/>
+<wire x1="144.78" y1="88.9" x2="144.78" y2="91.44" width="0.1524" layer="91"/>
+<wire x1="170.18" y1="91.44" x2="154.94" y2="91.44" width="0.1524" layer="91"/>
+<pinref part="LED4" gate="G$1" pin="VDD"/>
+<wire x1="154.94" y1="91.44" x2="144.78" y2="91.44" width="0.1524" layer="91"/>
+<wire x1="170.18" y1="88.9" x2="170.18" y2="91.44" width="0.1524" layer="91"/>
+<junction x="170.18" y="91.44"/>
+<pinref part="U$7" gate="G$1" pin="VBAT"/>
+<junction x="154.94" y="91.44"/>
 </segment>
 </net>
 <net name="RESET" class="0">
@@ -4701,9 +4699,8 @@ Short JP5 and DNP the lithium battery. If you don't do this things are going to 
 <label x="93.98" y="203.2" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="R9" gate="G$1" pin="1"/>
-<wire x1="160.02" y1="76.2" x2="160.02" y2="71.12" width="0.1524" layer="91"/>
-<label x="160.02" y="71.12" size="1.778" layer="95" rot="R270" xref="yes"/>
+<pinref part="R9" gate="G$1" pin="2"/>
+<wire x1="109.22" y1="71.12" x2="101.6" y2="71.12" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="D11" class="0">
@@ -4716,11 +4713,6 @@ Short JP5 and DNP the lithium battery. If you don't do this things are going to 
 <wire x1="88.9" y1="200.66" x2="99.06" y2="200.66" width="0.1524" layer="91"/>
 <label x="93.98" y="200.66" size="1.778" layer="95"/>
 </segment>
-<segment>
-<pinref part="R13" gate="G$1" pin="1"/>
-<wire x1="152.4" y1="76.2" x2="152.4" y2="71.12" width="0.1524" layer="91"/>
-<label x="152.4" y="71.12" size="1.778" layer="95" rot="R270" xref="yes"/>
-</segment>
 </net>
 <net name="D12" class="0">
 <segment>
@@ -4731,11 +4723,6 @@ Short JP5 and DNP the lithium battery. If you don't do this things are going to 
 <segment>
 <wire x1="88.9" y1="198.12" x2="99.06" y2="198.12" width="0.1524" layer="91"/>
 <label x="93.98" y="198.12" size="1.778" layer="95"/>
-</segment>
-<segment>
-<pinref part="R14" gate="G$1" pin="1"/>
-<wire x1="144.78" y1="76.2" x2="144.78" y2="71.12" width="0.1524" layer="91"/>
-<label x="144.78" y="71.12" size="1.778" layer="95" rot="R270" xref="yes"/>
 </segment>
 </net>
 <net name="D13" class="0">
@@ -4808,11 +4795,6 @@ Short JP5 and DNP the lithium battery. If you don't do this things are going to 
 <wire x1="101.6" y1="137.16" x2="88.9" y2="137.16" width="0.1524" layer="91"/>
 <label x="91.44" y="137.16" size="1.778" layer="95"/>
 </segment>
-<segment>
-<pinref part="R17" gate="G$1" pin="1"/>
-<wire x1="116.84" y1="76.2" x2="116.84" y2="71.12" width="0.1524" layer="91"/>
-<label x="116.84" y="71.12" size="1.778" layer="95" rot="R270" xref="yes"/>
-</segment>
 </net>
 <net name="D4" class="0">
 <segment>
@@ -4825,9 +4807,8 @@ Short JP5 and DNP the lithium battery. If you don't do this things are going to 
 <label x="91.44" y="134.62" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="R18" gate="G$1" pin="1"/>
-<wire x1="109.22" y1="76.2" x2="109.22" y2="71.12" width="0.1524" layer="91"/>
-<label x="109.22" y="71.12" size="1.778" layer="95" rot="R270" xref="yes"/>
+<wire x1="312.42" y1="137.16" x2="299.72" y2="137.16" width="0.1524" layer="91"/>
+<pinref part="U$9" gate="G$1" pin="CATHODE"/>
 </segment>
 </net>
 <net name="D7" class="0">
@@ -4980,11 +4961,6 @@ Short JP5 and DNP the lithium battery. If you don't do this things are going to 
 <wire x1="251.46" y1="177.8" x2="259.08" y2="177.8" width="0.1524" layer="91"/>
 <label x="259.08" y="177.8" size="1.778" layer="95"/>
 </segment>
-<segment>
-<pinref part="R15" gate="G$1" pin="1"/>
-<wire x1="127" y1="76.2" x2="127" y2="71.12" width="0.1524" layer="91"/>
-<label x="127" y="71.12" size="1.778" layer="95" rot="R270" xref="yes"/>
-</segment>
 </net>
 <net name="+5V" class="0">
 <segment>
@@ -5029,12 +5005,37 @@ Short JP5 and DNP the lithium battery. If you don't do this things are going to 
 <label x="58.42" y="187.96" size="1.778" layer="95"/>
 <pinref part="SUPPLY3" gate="+5V" pin="+5V"/>
 </segment>
+<segment>
+<wire x1="203.2" y1="114.3" x2="208.28" y2="114.3" width="0.1524" layer="91"/>
+<pinref part="SUPPLY4" gate="+5V" pin="+5V"/>
+<junction x="208.28" y="114.3"/>
+<pinref part="JP1" gate="G$1" pin="1"/>
+<wire x1="218.44" y1="114.3" x2="208.28" y2="114.3" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="R10" gate="G$1" pin="1"/>
+<wire x1="337.82" y1="147.32" x2="345.44" y2="147.32" width="0.1524" layer="91"/>
+<pinref part="SUPPLY5" gate="+5V" pin="+5V"/>
+</segment>
 </net>
 <net name="STRIP_CNTRL" class="0">
 <segment>
-<pinref part="JP3" gate="G$1" pin="2"/>
-<wire x1="203.2" y1="111.76" x2="210.82" y2="111.76" width="0.1524" layer="91"/>
-<label x="210.82" y="111.76" size="1.778" layer="95" xref="yes"/>
+<label x="198.12" y="111.76" size="1.778" layer="95" rot="R180" xref="yes"/>
+<pinref part="JP1" gate="G$1" pin="3"/>
+<wire x1="218.44" y1="109.22" x2="213.36" y2="109.22" width="0.1524" layer="91"/>
+<wire x1="213.36" y1="109.22" x2="213.36" y2="111.76" width="0.1524" layer="91"/>
+<wire x1="213.36" y1="111.76" x2="198.12" y2="111.76" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<wire x1="325.12" y1="147.32" x2="327.66" y2="147.32" width="0.1524" layer="91"/>
+<wire x1="327.66" y1="147.32" x2="327.66" y2="142.24" width="0.1524" layer="91"/>
+<wire x1="327.66" y1="142.24" x2="327.66" y2="134.62" width="0.1524" layer="91"/>
+<pinref part="R10" gate="G$1" pin="2"/>
+<junction x="327.66" y="147.32"/>
+<wire x1="327.66" y1="134.62" x2="345.44" y2="134.62" width="0.1524" layer="91"/>
+<label x="345.44" y="134.62" size="1.778" layer="95" xref="yes"/>
+<pinref part="U$9" gate="G$1" pin="ANODE1"/>
+<junction x="327.66" y="142.24"/>
 </segment>
 </net>
 <net name="N$5" class="0">
@@ -5159,42 +5160,6 @@ Short JP5 and DNP the lithium battery. If you don't do this things are going to 
 <label x="63.5" y="58.42" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="N$7" class="0">
-<segment>
-<pinref part="LED2" gate="G_LED" pin="-"/>
-<pinref part="R13" gate="G$1" pin="2"/>
-</segment>
-</net>
-<net name="N$10" class="0">
-<segment>
-<pinref part="LED2" gate="B_LED" pin="-"/>
-<pinref part="R14" gate="G$1" pin="2"/>
-</segment>
-</net>
-<net name="N$11" class="0">
-<segment>
-<pinref part="LED1" gate="R_LED" pin="-"/>
-<pinref part="R15" gate="G$1" pin="2"/>
-</segment>
-</net>
-<net name="N$12" class="0">
-<segment>
-<pinref part="LED1" gate="G_LED" pin="-"/>
-<pinref part="R17" gate="G$1" pin="2"/>
-</segment>
-</net>
-<net name="N$13" class="0">
-<segment>
-<pinref part="LED1" gate="B_LED" pin="-"/>
-<pinref part="R18" gate="G$1" pin="2"/>
-</segment>
-</net>
-<net name="N$14" class="0">
-<segment>
-<pinref part="LED2" gate="R_LED" pin="-"/>
-<pinref part="R9" gate="G$1" pin="2"/>
-</segment>
-</net>
 <net name="N$4" class="0">
 <segment>
 <pinref part="LED3" gate="G$1" pin="DO"/>
@@ -5204,33 +5169,14 @@ Short JP5 and DNP the lithium battery. If you don't do this things are going to 
 <net name="N$15" class="0">
 <segment>
 <pinref part="LED4" gate="G$1" pin="DO"/>
-<junction x="101.6" y="-30.48"/>
-</segment>
-</net>
-<net name="+5V1" class="0">
-<segment>
-<pinref part="LED3" gate="G$1" pin="VDD"/>
-<wire x1="68.58" y1="-12.7" x2="68.58" y2="-5.08" width="0.1524" layer="91"/>
-<wire x1="68.58" y1="-5.08" x2="93.98" y2="-5.08" width="0.1524" layer="91"/>
-<wire x1="93.98" y1="-5.08" x2="119.38" y2="-5.08" width="0.1524" layer="91"/>
-<pinref part="LED4" gate="G$1" pin="VDD"/>
-<wire x1="93.98" y1="-12.7" x2="93.98" y2="-5.08" width="0.1524" layer="91"/>
-<junction x="93.98" y="-5.08"/>
-</segment>
-</net>
-<net name="GND1" class="0">
-<segment>
-<pinref part="LED3" gate="G$1" pin="GND"/>
-<wire x1="63.5" y1="-38.1" x2="88.9" y2="-38.1" width="0.1524" layer="91"/>
-<wire x1="88.9" y1="-38.1" x2="114.3" y2="-38.1" width="0.1524" layer="91"/>
-<pinref part="LED4" gate="G$1" pin="GND"/>
-<junction x="88.9" y="-38.1"/>
+<junction x="177.8" y="71.12"/>
 </segment>
 </net>
 <net name="LED_CNTRL" class="0">
 <segment>
 <pinref part="LED3" gate="G$1" pin="DI"/>
-<wire x1="48.26" y1="-30.48" x2="50.8" y2="-30.48" width="0.1524" layer="91"/>
+<wire x1="119.38" y1="71.12" x2="127" y2="71.12" width="0.1524" layer="91"/>
+<pinref part="R9" gate="G$1" pin="1"/>
 </segment>
 </net>
 </nets>
