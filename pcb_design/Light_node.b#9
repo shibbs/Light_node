@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.005" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.025" altunitdist="inch" altunit="inch"/>
+<grid distance="1" unitdist="mm" unit="mm" style="lines" multiple="1" display="yes" altdistance="0.1" altunitdist="mm" altunit="mm"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="yes"/>
@@ -3885,7 +3885,6 @@ einem neuen Namen ab.</description>
 </signal>
 <signal name="+5V">
 <contactref element="R6" pad="2"/>
-<contactref element="D2" pad="C"/>
 <contactref element="IC2" pad="5"/>
 <contactref element="R4" pad="2"/>
 <contactref element="C8" pad="1"/>
@@ -3941,16 +3940,17 @@ einem neuen Namen ab.</description>
 <wire x1="0.508" y1="24.003" x2="1.016" y2="23.495" width="0.3048" layer="1"/>
 <wire x1="1.016" y1="23.495" x2="1.016" y2="22.57" width="0.3048" layer="1"/>
 <wire x1="1.016" y1="22.57" x2="1.427" y2="22.159" width="0.3048" layer="1"/>
-<wire x1="3.683" y1="22.6924" x2="3.683" y2="23.5847" width="0.3048" layer="1"/>
 <wire x1="5.08" y1="26.709" x2="5.08" y2="26.67" width="0.4064" layer="1"/>
 <wire x1="5.08" y1="26.67" x2="7.62" y2="24.13" width="0.4064" layer="1"/>
-<wire x1="3.683" y1="23.5847" x2="4.2807" y2="23.5847" width="0.4064" layer="1"/>
 <wire x1="4.2807" y1="23.5847" x2="4.826" y2="24.13" width="0.4064" layer="1"/>
 <wire x1="4.826" y1="24.13" x2="7.62" y2="24.13" width="0.4064" layer="1"/>
 <wire x1="-3.556" y1="4.103" x2="-3.556" y2="4.384" width="0.4064" layer="1"/>
 <wire x1="3.876" y1="22.032" x2="3.0226" y2="22.032" width="0.4064" layer="1"/>
 <wire x1="-2.35" y1="15.347" x2="-2.901" y2="15.347" width="0.254" layer="1"/>
 <wire x1="-2.901" y1="15.347" x2="-3.1115" y2="15.5575" width="0.254" layer="1"/>
+<contactref element="D2" pad="C"/>
+<wire x1="3.683" y1="23.5847" x2="4.2807" y2="23.5847" width="0" layer="19" extent="1-1"/>
+<wire x1="3.683" y1="22.6924" x2="3.683" y2="23.5847" width="0" layer="19" extent="1-1"/>
 </signal>
 </signals>
 </board>
