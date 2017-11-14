@@ -64,6 +64,8 @@
 <layer number="54" name="bGND_GNDA" color="1" fill="9" visible="no" active="no"/>
 <layer number="56" name="wert" color="7" fill="1" visible="no" active="no"/>
 <layer number="57" name="tCAD" color="7" fill="1" visible="no" active="no"/>
+<layer number="59" name="tCarbon" color="7" fill="1" visible="no" active="no"/>
+<layer number="60" name="bCarbon" color="7" fill="1" visible="no" active="no"/>
 <layer number="90" name="Modules" color="7" fill="1" visible="no" active="yes"/>
 <layer number="91" name="Nets" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="92" name="Busses" color="1" fill="1" visible="yes" active="yes"/>
@@ -98,6 +100,7 @@
 <layer number="126" name="_bNames" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="127" name="_tValues" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="128" name="_bValues" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="129" name="Mask" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="131" name="tAdjust" color="7" fill="1" visible="no" active="yes"/>
 <layer number="132" name="bAdjust" color="7" fill="1" visible="no" active="yes"/>
 <layer number="144" name="Drill_legend" color="7" fill="1" visible="yes" active="yes"/>
@@ -139,6 +142,8 @@
 <layer number="226" name="226bmp" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="227" name="227bmp" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="228" name="228bmp" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="229" name="229bmp" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="230" name="230bmp" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="231" name="Eagle3D_PG1" color="7" fill="1" visible="no" active="no"/>
 <layer number="232" name="Eagle3D_PG2" color="7" fill="1" visible="no" active="no"/>
 <layer number="233" name="Eagle3D_PG3" color="7" fill="1" visible="no" active="no"/>
@@ -147,6 +152,7 @@
 <layer number="250" name="Descript" color="7" fill="1" visible="no" active="no"/>
 <layer number="251" name="SMDround" color="7" fill="1" visible="no" active="no"/>
 <layer number="254" name="cooling" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="255" name="routoute" color="7" fill="1" visible="yes" active="yes"/>
 </layers>
 <schematic>
 <libraries>
@@ -3264,6 +3270,29 @@ Comes in a variety of packages.  Check out Hirose's ZX-x0 line: http://www.hiros
 <wire x1="7" y1="-5" x2="7" y2="5" width="0.1" layer="21"/>
 <text x="-2" y="-6" size="0.8128" layer="25">&gt;NAME</text>
 </package>
+<package name="CSS-1210C">
+<pad name="P$1" x="0.9" y="2.2" drill="0.5"/>
+<pad name="P$2" x="-1.1" y="2.2" drill="0.5"/>
+<pad name="P$3" x="-3.1" y="2.2" drill="0.5"/>
+<wire x1="-4.5" y1="0" x2="4.5" y2="0" width="0.127" layer="21"/>
+<wire x1="4.5" y1="0" x2="4.5" y2="3" width="0.127" layer="21"/>
+<wire x1="4.5" y1="3" x2="-4.5" y2="3" width="0.127" layer="21"/>
+<wire x1="-4.5" y1="3" x2="-4.5" y2="0" width="0.127" layer="21"/>
+<text x="-5" y="4" size="1.27" layer="25">&gt;NAME</text>
+<wire x1="0" y1="0" x2="0" y2="-2" width="0.127" layer="25"/>
+</package>
+<package name="JS102011SAQN">
+<smd name="P$1" x="2.4892" y="2.794" dx="1.2" dy="2.5" layer="1"/>
+<smd name="P$2" x="0" y="2.794" dx="1.2" dy="2.5" layer="1"/>
+<smd name="P$3" x="-2.4892" y="2.794" dx="1.2" dy="2.5" layer="1"/>
+<hole x="3.4036" y="0.0635" drill="0.889"/>
+<hole x="-3.4036" y="0.0635" drill="0.889"/>
+<wire x1="-4.4958" y1="1.778" x2="4.4958" y2="1.778" width="0.127" layer="21"/>
+<wire x1="4.4958" y1="1.778" x2="4.4958" y2="-1.778" width="0.127" layer="21"/>
+<wire x1="4.4958" y1="-1.778" x2="-4.4958" y2="-1.778" width="0.127" layer="21"/>
+<wire x1="-4.4958" y1="-1.778" x2="-4.4958" y2="1.778" width="0.127" layer="21"/>
+<text x="-4.318" y="-3.556" size="1.27" layer="25">&gt;NAME</text>
+</package>
 </packages>
 <symbols>
 <symbol name="POT">
@@ -3299,6 +3328,17 @@ Comes in a variety of packages.  Check out Hirose's ZX-x0 line: http://www.hiros
 <wire x1="10.16" y1="-5.08" x2="10.16" y2="5.08" width="0.254" layer="94"/>
 <wire x1="10.16" y1="5.08" x2="0" y2="5.08" width="0.254" layer="94"/>
 <text x="0" y="-7.62" size="1.27" layer="95">&gt;NAME</text>
+</symbol>
+<symbol name="SPDT_NO_GND">
+<pin name="P$1" x="-7.62" y="0" length="middle"/>
+<pin name="P$2" x="7.62" y="5.08" length="middle" rot="R180"/>
+<pin name="P$3" x="7.62" y="-5.08" length="middle" rot="R180"/>
+<wire x1="-2.54" y1="0" x2="2.54" y2="5.08" width="0.254" layer="94"/>
+<wire x1="-5.08" y1="7.62" x2="-5.08" y2="-7.62" width="0.254" layer="94"/>
+<wire x1="-5.08" y1="-7.62" x2="5.08" y2="-7.62" width="0.254" layer="94"/>
+<wire x1="5.08" y1="-7.62" x2="5.08" y2="7.62" width="0.254" layer="94"/>
+<wire x1="5.08" y1="7.62" x2="-5.08" y2="7.62" width="0.254" layer="94"/>
+<text x="-5.08" y="-10.16" size="1.27" layer="95">&gt;NAME</text>
 </symbol>
 </symbols>
 <devicesets>
@@ -3386,6 +3426,43 @@ Comes in a variety of packages.  Check out Hirose's ZX-x0 line: http://www.hiros
 </device>
 </devices>
 </deviceset>
+<deviceset name="SPDT_NO_GND">
+<gates>
+<gate name="G$1" symbol="SPDT_NO_GND" x="0" y="0"/>
+</gates>
+<devices>
+<device name="CSS" package="CSS-1210C">
+<connects>
+<connect gate="G$1" pin="P$1" pad="P$1"/>
+<connect gate="G$1" pin="P$2" pad="P$2"/>
+<connect gate="G$1" pin="P$3" pad="P$3"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="SMT" package="JS102011SAQN">
+<connects>
+<connect gate="G$1" pin="P$1" pad="P$2"/>
+<connect gate="G$1" pin="P$2" pad="P$1"/>
+<connect gate="G$1" pin="P$3" pad="P$3"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="SMT-RIGHT" package="JS102011SAQN">
+<connects>
+<connect gate="G$1" pin="P$1" pad="P$2"/>
+<connect gate="G$1" pin="P$2" pad="P$1"/>
+<connect gate="G$1" pin="P$3" pad="P$3"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
 </devicesets>
 </library>
 </libraries>
@@ -3443,7 +3520,6 @@ Comes in a variety of packages.  Check out Hirose's ZX-x0 line: http://www.hiros
 <part name="C10" library="microbuilder" deviceset="CAP_CERAMIC" device="0805-NOOUTLINE" value="10µF"/>
 <part name="U$5" library="microbuilder" deviceset="GND" device=""/>
 <part name="C11" library="microbuilder" deviceset="CAP_CERAMIC" device="0805-NOOUTLINE" value="10µF"/>
-<part name="U$10" library="microbuilder" deviceset="GND" device=""/>
 <part name="U$11" library="microbuilder" deviceset="GND" device=""/>
 <part name="R11" library="microbuilder" deviceset="RESISTOR" device="0805_NOOUTLINE" value="10K\"/>
 <part name="U$12" library="microbuilder" deviceset="GND" device=""/>
@@ -3484,6 +3560,8 @@ Comes in a variety of packages.  Check out Hirose's ZX-x0 line: http://www.hiros
 <part name="JP1" library="0_AlpineLabs" deviceset="USB_MICROB_PLUG" device="_CUSTOM"/>
 <part name="SUPPLY8" library="supply2" deviceset="+5V" device=""/>
 <part name="U$1" library="microbuilder" deviceset="GND" device=""/>
+<part name="U$8" library="0_Shibbs1" deviceset="SPDT_NO_GND" device="SMT"/>
+<part name="U$9" library="microbuilder" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -3491,10 +3569,10 @@ Comes in a variety of packages.  Check out Hirose's ZX-x0 line: http://www.hiros
 <text x="175.26" y="30.48" size="2.54" layer="94">Adafruit Pro Trinket 3.3V</text>
 <text x="175.26" y="25.4" size="2.54" layer="94">http://adafruit.com/products/2010</text>
 <text x="248.92" y="30.48" size="2.54" layer="94">CC 2.5 BY-SA</text>
-<text x="205.74" y="160.02" size="1.778" layer="97">10K  = 100mA</text>
-<text x="205.74" y="157.48" size="1.778" layer="97">5.0K  = 200mA</text>
-<text x="205.74" y="154.94" size="1.778" layer="97">2.0K  = 500mA</text>
-<text x="205.74" y="152.4" size="1.778" layer="97">1.0K  = 1000mA</text>
+<text x="189.738" y="155.448" size="1.778" layer="97">10K  = 100mA</text>
+<text x="189.738" y="152.908" size="1.778" layer="97">5.0K  = 200mA</text>
+<text x="189.738" y="150.368" size="1.778" layer="97">2.0K  = 500mA</text>
+<text x="189.738" y="147.828" size="1.778" layer="97">1.0K  = 1000mA</text>
 <text x="147.32" y="167.64" size="2.54" layer="97">Battery Charger Circuit</text>
 <text x="15.24" y="198.12" size="2.54" layer="97">USB power LED</text>
 <text x="210.82" y="203.2" size="2.54" layer="97">USB Power and Data In</text>
@@ -3511,6 +3589,7 @@ Comes in a variety of packages.  Check out Hirose's ZX-x0 line: http://www.hiros
 <text x="17.78" y="236.22" size="2.54" layer="97">For USB-powered Designs : 
 Short JP5 and DNP the lithium battery. If you don't do this things are going to get fucked up</text>
 <text x="68.58" y="104.14" size="2.54" layer="97">BAW56L </text>
+<text x="212.598" y="152.908" size="1.778" layer="97">Cut this line if populating the switch!</text>
 </plain>
 <instances>
 <instance part="R1" gate="G$1" x="251.46" y="182.88"/>
@@ -3553,11 +3632,10 @@ Short JP5 and DNP the lithium battery. If you don't do this things are going to 
 <instance part="U10" gate="G$1" x="170.18" y="142.24"/>
 <instance part="CH_LED" gate="G$1" x="134.62" y="132.08" rot="R180"/>
 <instance part="R10" gate="G$1" x="147.32" y="132.08"/>
-<instance part="JP3" gate="G$1" x="213.36" y="144.78" rot="R180"/>
+<instance part="JP3" gate="G$1" x="236.22" y="144.78" rot="R180"/>
 <instance part="C10" gate="G$1" x="121.92" y="137.16"/>
 <instance part="U$5" gate="G$1" x="121.92" y="127"/>
 <instance part="C11" gate="G$1" x="203.2" y="137.16"/>
-<instance part="U$10" gate="G$1" x="210.82" y="127"/>
 <instance part="U$11" gate="G$1" x="203.2" y="127"/>
 <instance part="R11" gate="G$1" x="193.04" y="142.24"/>
 <instance part="U$12" gate="G$1" x="198.12" y="127"/>
@@ -3598,6 +3676,8 @@ Short JP5 and DNP the lithium battery. If you don't do this things are going to 
 <instance part="JP1" gate="G$1" x="210.82" y="182.88" rot="R180"/>
 <instance part="SUPPLY8" gate="+5V" x="226.06" y="172.72"/>
 <instance part="U$1" gate="G$1" x="226.06" y="185.42"/>
+<instance part="U$8" gate="G$1" x="221.234" y="139.7"/>
+<instance part="U$9" gate="G$1" x="238.76" y="132.08"/>
 </instances>
 <busses>
 </busses>
@@ -3670,12 +3750,6 @@ Short JP5 and DNP the lithium battery. If you don't do this things are going to 
 <pinref part="C10" gate="G$1" pin="2"/>
 <pinref part="U$5" gate="G$1" pin="GND"/>
 <wire x1="121.92" y1="134.62" x2="121.92" y2="129.54" width="0.1524" layer="91"/>
-</segment>
-<segment>
-<pinref part="U$10" gate="G$1" pin="GND"/>
-<wire x1="210.82" y1="142.24" x2="210.82" y2="129.54" width="0.1524" layer="91"/>
-<pinref part="JP3" gate="G$1" pin="1"/>
-<wire x1="210.82" y1="142.24" x2="215.9" y2="142.24" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="C11" gate="G$1" pin="2"/>
@@ -3754,6 +3828,11 @@ Short JP5 and DNP the lithium battery. If you don't do this things are going to 
 <pinref part="JP1" gate="G$1" pin="GND"/>
 <pinref part="U$1" gate="G$1" pin="GND"/>
 <wire x1="226.06" y1="187.96" x2="218.44" y2="187.96" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="JP3" gate="G$1" pin="1"/>
+<pinref part="U$9" gate="G$1" pin="GND"/>
+<wire x1="238.76" y1="134.62" x2="238.76" y2="142.24" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="+3V3" class="1">
@@ -3877,14 +3956,28 @@ Short JP5 and DNP the lithium battery. If you don't do this things are going to 
 <wire x1="203.2" y1="144.78" x2="187.96" y2="144.78" width="0.1524" layer="91"/>
 <wire x1="187.96" y1="144.78" x2="182.88" y2="144.78" width="0.1524" layer="91"/>
 <wire x1="203.2" y1="142.24" x2="203.2" y2="144.78" width="0.1524" layer="91"/>
-<pinref part="JP3" gate="G$1" pin="2"/>
-<wire x1="203.2" y1="144.78" x2="215.9" y2="144.78" width="0.1524" layer="91"/>
-<junction x="203.2" y="144.78"/>
 <pinref part="JP11" gate="G$1" pin="2"/>
 <wire x1="170.18" y1="160.02" x2="187.96" y2="160.02" width="0.1524" layer="91"/>
 <wire x1="187.96" y1="160.02" x2="187.96" y2="144.78" width="0.1524" layer="91"/>
 <pinref part="U$14" gate="G$1" pin="VBAT"/>
 <junction x="187.96" y="160.02"/>
+<wire x1="213.36" y1="139.7" x2="213.614" y2="139.7" width="0.1524" layer="91"/>
+<wire x1="213.614" y1="139.7" x2="210.82" y2="139.7" width="0.1524" layer="91"/>
+<wire x1="210.82" y1="139.7" x2="208.28" y2="139.7" width="0.1524" layer="91"/>
+<wire x1="208.28" y1="139.7" x2="208.28" y2="144.78" width="0.1524" layer="91"/>
+<wire x1="208.28" y1="144.78" x2="203.2" y2="144.78" width="0.1524" layer="91"/>
+<pinref part="U$8" gate="G$1" pin="P$1"/>
+<junction x="213.614" y="139.7"/>
+<wire x1="238.76" y1="144.78" x2="228.854" y2="144.78" width="0.1524" layer="91"/>
+<wire x1="228.854" y1="144.78" x2="228.6" y2="144.78" width="0.1524" layer="91"/>
+<wire x1="228.6" y1="144.78" x2="228.6" y2="149.86" width="0.1524" layer="91"/>
+<pinref part="JP3" gate="G$1" pin="2"/>
+<pinref part="U$8" gate="G$1" pin="P$2"/>
+<junction x="228.854" y="144.78"/>
+<wire x1="228.6" y1="149.86" x2="210.82" y2="149.86" width="0.1524" layer="91"/>
+<wire x1="210.82" y1="149.86" x2="210.82" y2="139.7" width="0.1524" layer="91"/>
+<wire x1="213.614" y1="139.7" x2="226.06" y2="139.7" width="0.1524" layer="91"/>
+<wire x1="226.06" y1="139.7" x2="226.06" y2="137.16" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="RGB1" gate="G$1" pin="VDD"/>
