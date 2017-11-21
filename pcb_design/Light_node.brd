@@ -159,16 +159,28 @@
 <text x="93.0254" y="16.8768" size="1.27" layer="22" font="vector" ratio="12" rot="MR0" align="center">USBtinyISP
 or UNO FTDI
 Bootloader</text>
-<text x="6.0316" y="28.2004" size="1.27" layer="21" font="vector" ratio="12" rot="R90">#13</text>
-<text x="8.5716" y="28.2004" size="1.27" layer="21" font="vector" ratio="12" rot="R90">PWR</text>
+<text x="8.3996" y="30.1316" size="1.27" layer="21" font="vector" ratio="12" rot="R180">#13</text>
+<text x="13.0996" y="31.4716" size="1.27" layer="21" font="vector" ratio="12" rot="R180">PWR</text>
 <wire x1="0.1512" y1="0.0512" x2="0.1512" y2="36.0176" width="0.2032" layer="50"/>
 <wire x1="0.1512" y1="36.0176" x2="25.7544" y2="36.0176" width="0.2032" layer="50"/>
 <wire x1="25.7544" y1="36.0176" x2="25.7544" y2="0.0512" width="0.2032" layer="50"/>
 <wire x1="25.7544" y1="0.0512" x2="0.1512" y2="0.0512" width="0.2032" layer="50"/>
 <text x="20.7996" y="35.5716" size="1.27" layer="21" font="vector" ratio="12" rot="R180">Charging</text>
 <text x="25.1996" y="32.6716" size="1.27" layer="21" font="vector" ratio="12" rot="R180">Gnd</text>
-<text x="11.3004" y="20.1284" size="0.8128" layer="21" font="vector" ratio="12">Light 
-Node V1</text>
+<text x="10.2716" y="29.3004" size="1.6764" layer="26" font="vector" ratio="12" rot="MR270">Light Node V1
+SAH Nov 2017</text>
+<text x="16.7" y="29.4" size="1.778" layer="26" rot="MR0">Gnd</text>
+<text x="16.8" y="27" size="1.778" layer="26" rot="MR0">+5V</text>
+<text x="23" y="24.4" size="1.778" layer="26" rot="MR0">+3.3V</text>
+<text x="23.3" y="21.9" size="1.778" layer="26" rot="MR0">+Vbatt</text>
+<text x="23" y="19" size="1.778" layer="26" rot="MR0">D12</text>
+<text x="22.8" y="16.4" size="1.778" layer="26" rot="MR0">D11</text>
+<text x="19" y="14" size="1.778" layer="26" rot="MR0">D6</text>
+<text x="20.2" y="11.6" size="1.778" layer="26" rot="MR0">D5</text>
+<text x="20.3" y="9.2" size="1.778" layer="26" rot="MR0">D3</text>
+<text x="20" y="6.4" size="1.778" layer="26" rot="MR0">A6</text>
+<text x="21.6" y="4.2" size="1.778" layer="26" rot="MR0">A1</text>
+<text x="19.7" y="1.5" size="1.778" layer="26" rot="MR0">A2</text>
 </plain>
 <libraries>
 <library name="adafruit">
@@ -809,28 +821,18 @@ This Sunstone Circuits 2 Layer .DRU has been set to cover our minimum requiremen
 </pass>
 </autorouter>
 <elements>
-<element name="R1" library="microbuilder" package="0603-NO" value="68 (0603)" x="6.4666" y="26.2954" smashed="yes" rot="R270">
-<attribute name="NAME" x="-2.4174" y="28.6574" size="1.27" layer="25" rot="R270"/>
-</element>
-<element name="R2" library="microbuilder" package="0603-NO" value="68 (0603)" x="4.8696" y="26.2954" smashed="yes" rot="R270">
-<attribute name="NAME" x="-6.4574" y="30.2856" size="1.27" layer="25"/>
-</element>
+<element name="R1" library="microbuilder" package="0603-NO" value="68 (0603)" x="6.4666" y="26.2954" smashed="yes" rot="R270"/>
+<element name="R2" library="microbuilder" package="0603-NO" value="68 (0603)" x="4.8696" y="26.2954" smashed="yes" rot="R270"/>
 <element name="U40" library="adafruit" package="SOT23-5L" value="MIC5225-3.3v" x="6.7936" y="22.3584" smashed="yes" rot="R270">
-<attribute name="NAME" x="6.8366" y="18.6986" size="1.27" layer="25"/>
+<attribute name="NAME" x="6.8366" y="18.8986" size="1.27" layer="25"/>
 </element>
 <element name="C41" library="microbuilder" package="0805-NO" value="10uF" x="10.2162" y="21.9584" smashed="yes" rot="R270">
 <attribute name="NAME" x="11.2416" y="22.2912" size="1.27" layer="25"/>
 </element>
-<element name="R3" library="microbuilder" package="0603-NO" value="1.5K (0603)" x="8.0636" y="26.2954" smashed="yes" rot="R270">
-<attribute name="NAME" x="-3.3474" y="25.1844" size="1.27" layer="25" rot="R270"/>
-</element>
-<element name="R40" library="microbuilder" package="0603-NO" value="470 (0603)" x="9.7196" y="26.2744" smashed="yes" rot="R270">
-<attribute name="NAME" x="-3.1914" y="22.2634" size="1.27" layer="25" rot="R270"/>
-</element>
+<element name="R3" library="microbuilder" package="0603-NO" value="1.5K (0603)" x="8.0636" y="26.2954" smashed="yes" rot="R270"/>
+<element name="R40" library="microbuilder" package="0603-NO" value="470 (0603)" x="9.7196" y="26.2744" smashed="yes" rot="R270"/>
 <element name="PWR_LED" library="microbuilder" package="CHIPLED_0805_NOOUTLINE" value="green" x="10.5836" y="29.2299" smashed="yes" rot="R270"/>
-<element name="D40" library="adafruit" package="SOD-123FL" value="SCHOTTKY" x="11.4916" y="26.1494" smashed="yes" rot="R90">
-<attribute name="NAME" x="-2.3084" y="30.0494" size="1.27" layer="25" rot="R90"/>
-</element>
+<element name="D40" library="adafruit" package="SOD-123FL" value="SCHOTTKY" x="11.4916" y="26.1494" smashed="yes" rot="R90"/>
 <element name="C40" library="microbuilder" package="0805-NO" value="10uF" x="3.7456" y="22.2314" smashed="yes" rot="R270">
 <attribute name="NAME" x="3.3006" y="18.9186" size="1.27" layer="25" ratio="18"/>
 </element>
@@ -851,7 +853,7 @@ This Sunstone Circuits 2 Layer .DRU has been set to cover our minimum requiremen
 <attribute name="VALUE" x="0.8736" y="-1.6826" size="1.27" layer="27"/>
 </element>
 <element name="Y30" library="SparkFun" package="RESONATOR-SMD" value="12MHz" x="14.0656" y="15.8434" smashed="yes" rot="R90">
-<attribute name="NAME" x="15.5456" y="18.6956" size="1.27" layer="25" rot="R180"/>
+<attribute name="NAME" x="15.6456" y="18.7956" size="1.27" layer="25" rot="R180"/>
 </element>
 <element name="C30" library="microbuilder" package="_0805MP" value="0.1uF" x="2.0946" y="20.2964" smashed="yes" rot="R90">
 <attribute name="NAME" x="4.0256" y="18.4216" size="1.27" layer="25" font="vector" ratio="18" rot="R180"/>
@@ -910,7 +912,7 @@ This Sunstone Circuits 2 Layer .DRU has been set to cover our minimum requiremen
 <attribute name="NAME" x="15.2556" y="16.3666" size="1.27" layer="25" font="vector" ratio="18"/>
 </element>
 <element name="R9" library="microbuilder" package="0603-NO" value="100" x="14.2936" y="19.4224" smashed="yes" rot="R180">
-<attribute name="NAME" x="12.4156" y="19.3494" size="1.27" layer="25" font="vector" ratio="18" rot="R180"/>
+<attribute name="NAME" x="15.5156" y="21.5494" size="1.27" layer="25" font="vector" ratio="18" rot="R180"/>
 </element>
 <element name="U50" library="0_AlpineLabs" package="SOT23" value="COMMON_ANODE_DIODE" x="15.5936" y="11.2224" smashed="yes" rot="R270">
 <attribute name="NAME" x="15.8726" y="8.8986" size="1.27" layer="25"/>
@@ -921,8 +923,10 @@ This Sunstone Circuits 2 Layer .DRU has been set to cover our minimum requiremen
 <element name="JP5" library="0_Shibbs1" package="M03_25MM" value="M03" x="21.1808" y="12.4968" smashed="yes">
 <attribute name="NAME" x="18.7808" y="6.1968" size="1.27" layer="25"/>
 </element>
-<element name="JP1" library="0_AlpineLabs" package="USB-MICROB" value="USB_MICROB_PLUG_CUSTOM" x="5.7" y="34.4" rot="R180"/>
-<element name="U$8" library="0_Shibbs1" package="JS102011SAQN" value="SPDT_NO_GNDSMT" x="12.6" y="34.5" rot="MR180"/>
+<element name="JP1" library="0_AlpineLabs" package="USB-MICROB" value="USB_MICROB_PLUG_CUSTOM" x="5.7" y="34.4" smashed="yes" rot="R180">
+<attribute name="NAME" x="7.3" y="34.75" size="0.762" layer="25" rot="R180"/>
+</element>
+<element name="U$8" library="0_Shibbs1" package="JS102011SAQN" value="SPDT_NO_GNDSMT" x="12.6" y="34.5" smashed="yes" rot="MR180"/>
 </elements>
 <signals>
 <signal name="GND" class="1">

@@ -4318,6 +4318,7 @@ Short JP5 and DNP the lithium battery. If you don't do this things are going to 
 <pinref part="JP11" gate="G$1" pin="1"/>
 <wire x1="167.64" y1="160.02" x2="147.32" y2="160.02" width="0.1524" layer="91"/>
 <wire x1="147.32" y1="160.02" x2="147.32" y2="144.78" width="0.1524" layer="91"/>
+<wire x1="124.46" y1="144.78" x2="147.32" y2="144.78" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <wire x1="213.36" y1="81.28" x2="205.74" y2="81.28" width="0.1524" layer="91"/>
