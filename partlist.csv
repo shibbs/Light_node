@@ -1,0 +1,49 @@
+Partlist
+
+Exported from Light_node.sch at 11/29/17 4:14 PM
+
+EAGLE Version 7.5.0 Copyright (c) 1988-2015 CadSoft
+
+Assembly variant: 
+
+Part     Value                  Device                    Package                Library      Sheet
+
+B1       red                    LED0805_NOOUTLINE         CHIPLED_0805_NOOUTLINE microbuilder 1
+C10      10µF                   CAP_CERAMIC0805-NOOUTLINE 0805-NO                microbuilder 1
+C11      10µF                   CAP_CERAMIC0805-NOOUTLINE 0805-NO                microbuilder 1
+C20      10µF                   CAP_CERAMIC0805-NOOUTLINE 0805-NO                microbuilder 1
+C30      0.1uF                  CAP_CERAMIC_0805MP        _0805MP                microbuilder 1
+C31      0.1uF                  CAP_CERAMIC0805-NOOUTLINE 0805-NO                microbuilder 1
+C40      10uF                   CAP_CERAMIC0805-NOOUTLINE 0805-NO                microbuilder 1
+C41      10uF                   CAP_CERAMIC0805-NOOUTLINE 0805-NO                microbuilder 1
+CH_LED   GREEN                  LED0805_NOOUTLINE         CHIPLED_0805_NOOUTLINE microbuilder 1
+D40      SCHOTTKY               DIODE_SOD-123FL           SOD-123FL              adafruit     1
+FTDI                            PINHD-1X6CB               1X06-CLEANBIG          adafruit     1
+JP1      USB_MICROB_PLUG_CUSTOM USB_MICROB_PLUG_CUSTOM    USB-MICROB             0_AlpineLabs 1
+JP2                             PINHD-1X12-CB             1X12-CB                adafruit     1
+JP3      JSTPH                  JST_2PIN                  JSTPH2                 microbuilder 1
+JP5      M03                    M03                       M03_25MM               0_Shibbs1    1
+JP11                            HEADER-1X2ROUND           1X02_ROUND             microbuilder 1
+POT                             POT                       3306P_POT              0_Shibbs1    1
+PWR_LED  green                  LED0805_NOOUTLINE         CHIPLED_0805_NOOUTLINE microbuilder 1
+R1       68 (0603)              RESISTOR_0603_NOOUT       0603-NO                microbuilder 1
+R2       68 (0603)              RESISTOR_0603_NOOUT       0603-NO                microbuilder 1
+R3       1.5K (0603)            RESISTOR_0603_NOOUT       0603-NO                microbuilder 1
+R5       470 (0603)             RESISTOR_0603_NOOUT       0603-NO                microbuilder 1
+R9       100                    RESISTOR_0603_NOOUT       0603-NO                microbuilder 1
+R10      470                    RESISTOR0805_NOOUTLINE    0805-NO                microbuilder 1
+R11      10K\                   RESISTOR0805_NOOUTLINE    0805-NO                microbuilder 1
+R20      10K                    RESISTOR0805_NOOUTLINE    0805-NO                microbuilder 1
+R21      10K                    RESISTOR0805_NOOUTLINE    0805-NO                microbuilder 1
+R30      10K (0603)             RESISTOR0805_NOOUTLINE    0805-NO                microbuilder 1
+R40      470 (0603)             RESISTOR_0603_NOOUT       0603-NO                microbuilder 1
+R50      10K                    RESISTOR_0603_NOOUT       0603-NO                microbuilder 1
+RGB1     WS2812B5050            WS2812B5050               WS2812B                microbuilder 1
+RGB2     WS2812B5050            WS2812B5050               WS2812B                microbuilder 1
+U$8      SPDT_NO_GNDSMT         SPDT_NO_GNDSMT            JS102011SAQN           0_Shibbs1    1
+U10      MCP73831T-2ACI/OT      MCP73831/2                SOT23-5                microbuilder 1
+U20      LIS3DHTR               ACCEL_LIS3DHTR            LGA16_3X3MM            microbuilder 1
+U30      ATmega328P             MEGA8-MI                  MLF32-TH               microbuilder 1
+U40      MIC5225-3.3v           LP298XS                   SOT23-5L               adafruit     1
+U50      COMMON_ANODE_DIODE     COMMON_ANODE_DIODE        SOT23                  0_AlpineLabs 1
+Y30      12MHz                  RESONATORSMD              RESONATOR-SMD          SparkFun     1
