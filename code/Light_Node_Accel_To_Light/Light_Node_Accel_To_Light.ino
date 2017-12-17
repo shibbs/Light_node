@@ -126,7 +126,7 @@ void read_acclerometer_vals(){
   if(y < 0) y = - 1 * x;
   if(z < 0) z = -1 * z;
   if(z > z_threshold) z = accel_scaler;
-  else z *= 2;
+  else z *= 2;  
   
   if (SERIAL_DEBUG) {
     Serial.print("\nAccelerometer:\n");
