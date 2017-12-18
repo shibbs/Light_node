@@ -70,12 +70,13 @@ int pixel_delay_ms = 10;
 // example for more information on possible values.
 Adafruit_NeoPixel pixels = Adafruit_NeoPixel(NUMPIXELS, LEDS_PIN, NEO_GRB + NEO_KHZ800);
 
-int max_brightness = 100;
+float max_brightness = 100;
 
 //accelerometer variables
 float x,y,z;
-float accel_scaler = max_brightness;
-int z_threshold = accel_scaler/2;
+//this sort of tunes the sensitivity of the lights
+float low_threshold = max_brightness*.2;
+int z_threshold = max_brightness/2;
 LIS3DH myIMU( I2C_MODE, 0x18 ); //Default constructor is I2C, addr 0x19 = 25 = 0b0011001 We need and address of 0x18 = 24 = 0b0011000 b/c we pull that pin down
 
 
@@ -117,16 +118,20 @@ void setup() {
 }
 
 void read_acclerometer_vals(){
+  low_threshold = max_brightness*.2;
+  z_threshold = max_brightness/2;
   //Get accelerometer Data and scale it to color values ( 0 to 256 )
-  x = accel_scaler* myIMU.readFloatAccelX();
-  y = accel_scaler* myIMU.readFloatAccelY();
-  z = accel_scaler* myIMU.readFloatAccelZ();
+  x = max_brightness* myIMU.readFloatAccelX();
+  y = max_brightness* myIMU.readFloatAccelY();
+  z = max_brightness* myIMU.readFloatAccelZ();
   //convert the vals into useful ranges
   if(x < 0) x = -1 * x;
-  if(y < 0) y = - 1 * x;
+  if(y < 0) y = - 1 * y;
   if(z < 0) z = -1 * z;
-  if(z > z_threshold) z = accel_scaler;
-  else z *= 2;  
+  z = max_brightness - z;
+  if(x < low_threshold) x = 0;
+  if(y < low_threshold) y = 0;
+  if(z < low_threshold) z = 0;
   
   if (SERIAL_DEBUG) {
     Serial.print("\nAccelerometer:\n");
@@ -154,7 +159,8 @@ void setLEDs(int red, int green, int blue){
 void loop()
 {
   read_acclerometer_vals();
-//  sensorValue = analogRead(POT_PIN);
+  //scale to 0-256
+  max_brightness = analogRead(POT_PIN) / 4;
   setLEDs(x,y,z);
   delay(50);
 }
