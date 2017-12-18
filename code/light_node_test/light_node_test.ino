@@ -9,15 +9,15 @@
 #define STRIP   1
 #define ONBOARD 2
 //comment out one of these lines!
-#define STRIP_OR_ONBAORD  STRIP 
-//#define STRIP_OR_ONBAORD  ONBOARD 
+//#define STRIP_OR_ONBOARD  STRIP
+#define STRIP_OR_ONBOARD  ONBOARD
 
 
 
 // Which pin on the Arduino is connected to the NeoPixels?
 // On a Trinket or Gemma we suggest changing this to 1
 
-#if( STRIP_OR_ONBAORD == ONBOARD )
+#if( STRIP_OR_ONBOARD == ONBOARD )
   //this is the setup for  using the LEDs on board
   #define LEDS_PIN            10
   #define NUMPIXELS      2
