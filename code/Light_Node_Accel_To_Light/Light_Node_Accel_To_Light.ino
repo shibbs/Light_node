@@ -84,7 +84,7 @@ LIS3DH myIMU( I2C_MODE, 0x18 ); //Default constructor is I2C, addr 0x19 = 25 = 0
 
 void setup() {
   // put your setup code here, to run once:
-  if (SERIAL_DEBUG) Serial.begin(9600);
+  if (SERIAL_DEBUG) Serial.begin(57600);
   delay(1000); //relax...
   if (SERIAL_DEBUG) Serial.println("Processor came out of reset.\n");
 

@@ -12,11 +12,6 @@
 #define STRIP_OR_ONBAORD  STRIP 
 //#define STRIP_OR_ONBAORD  ONBOARD 
 
-
-
-// Which pin on the Arduino is connected to the NeoPixels?
-// On a Trinket or Gemma we suggest changing this to 1
-
 #if( STRIP_OR_ONBAORD == ONBOARD )
   //this is the setup for  using the LEDs on board
   #define LEDS_PIN            10
@@ -39,7 +34,7 @@ int delayval = 500; // delay for half a second
 void setup() {
   // This is for Trinket 5V 16MHz, you can remove these three lines if you are not using a Trinket
 //#if defined (__AVR_ATtiny85__)
-//  if (F_CPU == 16000000) clock_prescale_set(clock_div_1);
+  if (F_CPU == 16000000) clock_prescale_set(clock_div_1);
 //#endif
   // End of trinket special code
   pinMode(LED_BUILTIN, OUTPUT);
@@ -59,7 +54,11 @@ void loop() {
 
 //    strip.show();
     pixels.show(); // This sends the updated pixel color to the hardware.
-    delay(delayval); // Delay for a period of time (in milliseconds).
+    digitalWrite(LED_BUILTIN, HIGH);   // turn the LED on (HIGH is the voltage level)
+    delay(100);                       // wait for a second
+    digitalWrite(LED_BUILTIN, LOW);    // turn the LED off by making the voltage LOW
+    delay(500);                       // wait for a second
+//    delay(delayval); // Delay for a period of time (in milliseconds).
 
   }
 }
