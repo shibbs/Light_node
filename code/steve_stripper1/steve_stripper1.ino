@@ -3,12 +3,13 @@
 #define DEBUG false
 #define USE_ACCELEROMETER true
 
-#define NUM_LEDS_IN_STRIP   36
-#define PULSE_GAP_LOOPS     4
-#define MAX_LOOP_DELAY_MS  1000
-#define MIN_LOOP_DELAY_MS  100
+#define NUM_LEDS_IN_STRIP   29
+#define PULSE_GAP_LOOPS     10
+#define PULSE_LENGTH        4
+#define MAX_LOOP_DELAY_MS  100
+#define MIN_LOOP_DELAY_MS  40
 
-int loop_delay_ms = 1000;
+int loop_delay_ms = 100;
 
 uint32_t led_array[NUM_LEDS_IN_STRIP];
 
@@ -55,7 +56,7 @@ void addPulses(){
   static int ms_since_pulse = 0;
   static int loops_since_pulse = 0;
   if(loops_since_pulse >= PULSE_GAP_LOOPS){
-    InitiatePulse( 1,  generatePulseColor() );
+    InitiatePulse( PULSE_LENGTH,  generatePulseColor() );
     ms_since_pulse = 0;
     loops_since_pulse =0;
     Serial.println("D");
@@ -69,11 +70,11 @@ void loop() {
   if(DEBUG) Serial.println("C");
   // put your main code here, to run repeatedly:
 //  run_pattern(led_array);
-//  updateDelay();
+  updateDelay();
   ProgressPattern();
   addPulses();
   PrepArray(led_array);
-//  PowerSaveArray(led_array);
+  PowerSaveArray(led_array);
 //  if(DEBUG) Serial.println("D");
   lightUpStrip(led_array);
   delay(loop_delay_ms);

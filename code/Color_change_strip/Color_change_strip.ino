@@ -1,15 +1,15 @@
 #include "LED_Strip_Functions.h"
 
-#define DEBUG true
+#define DEBUG false
 #define USE_ACCELEROMETER false
 
-#define NUM_LEDS_IN_STRIP   12
+#define NUM_LEDS_IN_STRIP   4
 #define PULSE_GAP_LOOPS     1
 #define MAX_LOOP_DELAY_MS  1000
 #define MIN_LOOP_DELAY_MS  100
-#define MAX_LED_VAL   150
+#define MAX_LED_VAL   255
 
-int loop_delay_ms = 200;
+int loop_delay_ms = 300;
 
 uint32_t led_array[NUM_LEDS_IN_STRIP];
 
@@ -30,6 +30,7 @@ void setup() {
 int r_change = 5;
 int b_change = 10;
 int g_change = 3;
+
 uint32_t generatePulseColor(){
   static int r = 100;
   static int g = 20;
