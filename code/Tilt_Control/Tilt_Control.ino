@@ -45,14 +45,13 @@ Distributed as-is; no warranty is given.
 #include "SPI.h"
 #include <Adafruit_NeoPixel.h>
 
-#define SERIAL_DEBUG true
-#define USE_POT   false
+#define SERIAL_DEBUG false
 
-#define STRIP   1
+#define STRIP   5
 #define ONBOARD 2
 //comment out one of these lines!
-//#define STRIP_OR_ONBAORD  STRIP 
-#define STRIP_OR_ONBAORD  ONBOARD 
+#define STRIP_OR_ONBAORD  STRIP 
+//#define STRIP_OR_ONBAORD  ONBOARD 
 
 #if( STRIP_OR_ONBAORD == ONBOARD )
   //this is the setup for  using the LEDs on board
@@ -64,6 +63,9 @@ Distributed as-is; no warranty is given.
   #define NUMPIXELS      10
 #endif
 
+bool leds_on = false;
+int loop_delay_ms = 300;
+
 #define POT_PIN      A7
 int pixel_delay_ms = 10;
 // When we setup the NeoPixel library, we tell it how many pixels, and which pin to use to send signals.
@@ -71,7 +73,7 @@ int pixel_delay_ms = 10;
 // example for more information on possible values.
 Adafruit_NeoPixel pixels = Adafruit_NeoPixel(NUMPIXELS, LEDS_PIN, NEO_GRB + NEO_KHZ800);
 
-float max_brightness = 250;
+float max_brightness = 100;
 
 //accelerometer variables
 float x,y,z;
@@ -79,9 +81,6 @@ float x,y,z;
 float low_threshold = max_brightness*.2;
 int z_threshold = max_brightness/2;
 LIS3DH myIMU( I2C_MODE, 0x18 ); //Default constructor is I2C, addr 0x19 = 25 = 0b0011001 We need and address of 0x18 = 24 = 0b0011000 b/c we pull that pin down
-
-
-
 
 void setup() {
   // put your setup code here, to run once:
@@ -118,21 +117,70 @@ void setup() {
 
 }
 
+#define Z_THRESH -.5
+
+bool check_for_tilt(){
+  
+  z = myIMU.readFloatAccelZ();
+  Serial.print(" Z1 = ");
+  Serial.println(z, 4);
+  if(z > Z_THRESH)
+    return true;
+  return false;
+}
+
+int r = 100;
+int g = 20;
+int b = 50;
+
+
+
+int r_change = 3;
+int b_change = 5;
+int g_change = 1;
+
+void generatePulseColor(){
+ 
+
+  r += r_change;
+  b += b_change;
+  g += g_change;
+  if(r >= max_brightness){
+    r_change = -1*r_change;
+    r =max_brightness;
+  }else if (r<=0){
+    r_change = -1*r_change;
+    r=0;
+  }
+  if(g >= max_brightness){
+    g_change = -1*g_change;
+    g =max_brightness;
+  }else if (g<=0){
+    g_change = -1*g_change;
+    g=0;
+  }
+  if(b >= max_brightness){
+    b_change = -1*b_change;
+    b =max_brightness;
+  }else if (b<=0){
+    b_change = -1*b_change;
+    b=0;
+  }
+//  return ValsToColor(r,g,b);
+  
+}
+
 void read_acclerometer_vals(){
   low_threshold = max_brightness*.2;
   z_threshold = max_brightness/2;
   //Get accelerometer Data and scale it to color values ( 0 to 256 )
-  x = myIMU.readFloatAccelX();
-  y = myIMU.readFloatAccelY();
-  z = myIMU.readFloatAccelZ();
+  x = max_brightness* myIMU.readFloatAccelX();
+  y = max_brightness* myIMU.readFloatAccelY();
+  z = max_brightness* myIMU.readFloatAccelZ();
   //convert the vals into useful ranges
   if(x < 0) x = -1 * x;
   if(y < 0) y = - 1 * y;
   if(z < 0) z = -1 * z;
-  x*=max_brightness;
-  y*=max_brightness;
-  z*=max_brightness;
-  
   z = max_brightness - z;
   if(x < low_threshold) x = 0;
   if(y < low_threshold) y = 0;
@@ -161,11 +209,41 @@ void setLEDs(int red, int green, int blue){
   }
 }
 
+uint32_t color;
 void loop()
 {
-  read_acclerometer_vals();
+  int num_loops = 0;
+
+  
+  //if the jar is tilted for a certain amount of time, toggle the LED state 
+  while( check_for_tilt() ){
+    delay(100);
+    num_loops ++;
+    //use exact b/c once we trigger we want to stay in that state until released
+    if(num_loops == 5){
+      leds_on = !leds_on;
+      if(!leds_on){
+          if (SERIAL_DEBUG) {Serial.println("turning off");}
+          setLEDs(0,0,0);
+      }else{
+        if (SERIAL_DEBUG) {Serial.println("turning on");}
+        setLEDs(r,g,b);
+      }
+    }
+  }
+  if(leds_on){
+    generatePulseColor();
+    max_brightness = analogRead(POT_PIN) >> 2; //range is 0-1024 normally do divide by 4
+    setLEDs(r,g,b);
+    delay(loop_delay_ms);
+  }else{
+    //do nothing b/c LEDs are off
+    
+  }
+  
+  
   //scale to 0-256
-  if(USE_POT) max_brightness = analogRead(POT_PIN) / 4;
-  setLEDs(x,y,z);
+  max_brightness = analogRead(POT_PIN) / 4;
+//  setLEDs(x,y,z);
   delay(50);
 }

@@ -2,14 +2,17 @@
 
 #define DEBUG false
 #define USE_ACCELEROMETER true
+#define USE_POTENTIOMETER true
 
-#define NUM_LEDS_IN_STRIP   29
-#define PULSE_GAP_LOOPS     10
-#define PULSE_LENGTH        4
-#define MAX_LOOP_DELAY_MS  100
-#define MIN_LOOP_DELAY_MS  40
+#define POT_PIN      A7
+#define NUM_LEDS_IN_STRIP   54
+#define PULSE_GAP_LOOPS     30
+#define PULSE_LENGTH        5
+#define MAX_LOOP_DELAY_MS  400
+#define MIN_LOOP_DELAY_MS  10
 
-int loop_delay_ms = 100;
+int32_t loop_delay_ms = 100;
+
 
 uint32_t led_array[NUM_LEDS_IN_STRIP];
 
@@ -38,16 +41,30 @@ uint32_t generatePulseColor(){
 
 void updateDelay(){
   int loop_range = MAX_LOOP_DELAY_MS - MIN_LOOP_DELAY_MS;
-  if(USE_ACCELEROMETER){
-    loop_delay_ms = loop_range * Get_percent_tilt_value();  
-    loop_delay_ms /= 100;
+//  if(USE_ACCELEROMETER){
+//    loop_delay_ms = loop_range * Get_percent_tilt_value();  
+//    loop_delay_ms /= 100;
+//    loop_delay_ms += MIN_LOOP_DELAY_MS;
+//
+//    if(loop_delay_ms > MAX_LOOP_DELAY_MS) {
+//      loop_delay_ms = MAX_LOOP_DELAY_MS;
+//    }else if ( loop_delay_ms < MIN_LOOP_DELAY_MS){
+//      loop_delay_ms = MIN_LOOP_DELAY_MS;
+//    }
+//  }else 
+  if(USE_POTENTIOMETER){
+    loop_delay_ms = analogRead(POT_PIN); //1024 is max val
+//    if(DEBUG) Serial.println(loop_delay_ms);
+    loop_delay_ms *= loop_range;
+    loop_delay_ms /= 1024;//re-normalize 
     loop_delay_ms += MIN_LOOP_DELAY_MS;
-
+//    if(DEBUG) Serial.println(loop_delay_ms);
     if(loop_delay_ms > MAX_LOOP_DELAY_MS) {
       loop_delay_ms = MAX_LOOP_DELAY_MS;
     }else if ( loop_delay_ms < MIN_LOOP_DELAY_MS){
       loop_delay_ms = MIN_LOOP_DELAY_MS;
     }
+//    if(DEBUG) Serial.println(loop_delay_ms);
   }
   
 }
@@ -55,7 +72,14 @@ void updateDelay(){
 void addPulses(){
   static int ms_since_pulse = 0;
   static int loops_since_pulse = 0;
-  if(loops_since_pulse >= PULSE_GAP_LOOPS){
+  
+  if(USE_ACCELEROMETER){
+    if(Got_motion_bump()){
+      Serial.println("Bump");
+      InitiatePulse( PULSE_LENGTH,  RANDOM_COLOR );
+    }
+  }
+  else if(loops_since_pulse >= PULSE_GAP_LOOPS){
     InitiatePulse( PULSE_LENGTH,  generatePulseColor() );
     ms_since_pulse = 0;
     loops_since_pulse =0;
@@ -74,8 +98,9 @@ void loop() {
   ProgressPattern();
   addPulses();
   PrepArray(led_array);
-  PowerSaveArray(led_array);
+//  PowerSaveArray(led_array);
 //  if(DEBUG) Serial.println("D");
+  MirrorArray(led_array);
   lightUpStrip(led_array);
   delay(loop_delay_ms);
 }

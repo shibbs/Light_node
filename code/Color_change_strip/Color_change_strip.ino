@@ -3,11 +3,11 @@
 #define DEBUG false
 #define USE_ACCELEROMETER false
 
-#define NUM_LEDS_IN_STRIP   4
+#define NUM_LEDS_IN_STRIP   25
 #define PULSE_GAP_LOOPS     1
 #define MAX_LOOP_DELAY_MS  1000
 #define MIN_LOOP_DELAY_MS  100
-#define MAX_LED_VAL   255
+#define MAX_LED_VAL   100
 
 int loop_delay_ms = 300;
 
@@ -27,9 +27,9 @@ void setup() {
   if(USE_ACCELEROMETER ) Init_motion();
 }
 
-int r_change = 5;
-int b_change = 10;
-int g_change = 3;
+int r_change = 3;
+int b_change = 5;
+int g_change = 1;
 
 uint32_t generatePulseColor(){
   static int r = 100;
