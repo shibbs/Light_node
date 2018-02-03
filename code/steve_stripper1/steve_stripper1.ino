@@ -5,7 +5,7 @@
 #define USE_POTENTIOMETER true
 
 #define POT_PIN      A7
-#define NUM_LEDS_IN_STRIP   54
+#define NUM_LEDS_IN_STRIP   54 //54 on steve's hood
 #define PULSE_GAP_LOOPS     30
 #define PULSE_LENGTH        5
 #define MAX_LOOP_DELAY_MS  400

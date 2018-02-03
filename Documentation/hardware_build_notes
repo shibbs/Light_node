@@ -1,0 +1,7 @@
+build notes :
+
+Light strip has male connector
+Board has female connector
+
+Cut the trace on the power switch if you're using a power switch to the Battery
+The strips I bought have a resistor on the first LED. For some reason that won't play nicely with our hardware, so you'll need to cut that first LED off SparkFun_LIS3DH_Arduino_Library

@@ -1,0 +1,7 @@
+AccelTestSerial: prints out the acceleraometer values to serial. only useful if you have an FTDI cable
+Color_change_strip:lights the whole strip up and slowly moves between colors. Good for ambiance and sexy time lights
+Light_Node_Accel_To_Light:Sets the LED  colors based on the angle of the board
+light_node_test: controls the onboard and strips LEDs based on the potentiomter value
+steve_stripper1: Sends pulses up the strand. Can be set to initiate pulses from the Accelerometer
+Strip_test: Basic light up example to test strips
+Tilt_control: Looks for the board to be hung LEDs down (this is easily toggled) and when it is tilted to about half way the LEDs will turn on. Tilt again to turn off
