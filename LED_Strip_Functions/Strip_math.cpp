@@ -12,6 +12,9 @@
 //This is a function that will generate a random color that is a bit biased.
 //If you want the top end color to be white, just use 0xFFFFFF, but I think this looks slightly nicer
 
+#define R_MASK 0x0000FF
+#define G_MASK 0x00FF00
+#define B_MASK 0xFF0000
 
 #define UPSCALER  3 //number of virtual pixels per real pixel. This smooths things as the pixels move down the line but uses a bit more power
 #define PULSE_SIZE  5 //This is the number of pixels that a single "Pulse" takes up when generated in the array
@@ -57,16 +60,16 @@ uint32_t averagePixels(uint32_t* arr_in , long num_pixels){
   uint32_t ave_G = 0;
   uint32_t temp;
   for(int j = 0; j < num_pixels; j++){
-//    ave_R += ( arr_in[ j ]  & 0xFF0000 )>>16;
-//    ave_G += ( arr_in[ j ]  & 0x00FF00 )>>8;
+//    ave_R += ( arr_in[ j ]  & B_MASK )>>16;
+//    ave_G += ( arr_in[ j ]  & G_MASK )>>8;
     temp = arr_in[ j ] ;
-    temp = temp & 0x0000FF;
+    temp = temp & R_MASK;
     ave_B += temp;
     temp = arr_in[ j ] ;
-    temp = (temp & 0x00FF00 )>>8;
+    temp = (temp & G_MASK )>>8;
     ave_G += temp;
     temp = arr_in[ j ] ;
-    temp = (temp & 0xFF0000)>>16;
+    temp = (temp & B_MASK)>>16;
     ave_R += temp;
   }
   ave_R /= num_pixels;
@@ -152,17 +155,21 @@ void PrepArray(uint32_t * output_array){
 
 //at most a neopixel draws 60mA - which corresponds to all 3 LEDs being at 255, or a total led value of 765
 #define MAX_FLUX_VALUE 2550 //1mA -> 12.75 flux, use 200mA cap
+//Currenly this is not working properly - it's jacking up some of the eges on the pixel groups
+//FLAG SAH it may now be fixed. had to re-mask the colors after the math was performed
 void PowerSaveArray( uint32_t * output_array ){
-    uint32_t temp,r,g,b,total_flux,scaling_value;
+    uint32_t temp,r,g,b,total_flux,scaling_value = 0;
     for(int j = 0; j < num_leds_in_strip; j++){
         temp = output_array[ j ] ;
-        temp = temp & 0x0000FF;
+        temp = temp & R_MASK;
         total_flux += temp;
         temp = output_array[ j ] ;
-        temp = (temp & 0x00FF00 )>>8;
+        //isolate the green channel and downshift it
+        temp = (temp & G_MASK )>>8;
         total_flux += temp;
+        //isolate the blue channel and downshift it
         temp = output_array[ j ] ;
-        temp = (temp & 0xFF0000)>>16;
+        temp = (temp & B_MASK)>>16;
         total_flux += temp;
     }
     Serial.print("Total Flux ");
@@ -177,15 +184,19 @@ void PowerSaveArray( uint32_t * output_array ){
     Serial.println(scaling_value);
     for(int j = 0; j < num_leds_in_strip; j++){
         temp = output_array[ j ] ;
-        r = temp & 0x0000FF;
-        r *= scaling_value;
-        r /= 0xFF; //scale back down
-        g = (temp & 0x00FF00 )>>8;
-        g *= scaling_value;
+        r = temp & R_MASK;//isolate the red channel
+        r *= scaling_value; //scale the red channel
+        r /= 0xFF; //scale back down the red channel
+        r = r & R_MASK; //isolate the red channel again
+        g = (temp & G_MASK )>>8; //isolate and downshift the green channel
+        g *= scaling_value;//scale the green
         // g /= 0xFF; //would scale back down but are already scaled up
-        b = (temp & 0xFF0000)>>16;
+        g = g & G_MASK; //re-isolate the green channel
+
+        b = (temp & B_MASK)>>8; //isolate and downshift the blue channel. NOTE normally we'd do 16 but we'll do 8 to avoid having to re-upshift later!
         b *= scaling_value;
-        b = b<<8; //need to bump to MSB but already have a bump of <<8 from the scaling value
+        // b = b<<16; normally we'd need to bump this back up 16 but we got cute. see NOTE above ^^
+        b = b* B_MASK;
         temp = r + g + b;
         output_array[j] = temp;
     }

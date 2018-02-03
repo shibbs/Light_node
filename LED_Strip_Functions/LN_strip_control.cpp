@@ -16,6 +16,8 @@ void InitializeStrip(int num_LEDs){
 void lightUpStrip(uint32_t * send_arr){
   //loop over all pixels in array
   // Serial.println("Setting Strip");
+
+  //for some reason this is not working for shit, so I've pulled it for now. Would like to resolve some time since we're currently just spinning our wheels on this
   for (int i = 0; i < NUM_PIXELS; i++){
     // //if pixel changed, then update it and update our static array
     //For some reason the below chunk of code is inserting random colors into the output. Can't figure out hy
@@ -25,7 +27,6 @@ void lightUpStrip(uint32_t * send_arr){
     //   strip.setPixelColor(i, send_arr[i]);
     // }
     strip.setPixelColor(i, send_arr[i]);
-
   }
   strip.show();                     // Refresh strip
 }
